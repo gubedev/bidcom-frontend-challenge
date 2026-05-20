@@ -6,6 +6,6 @@ export const paths = {
     getHref: (q: string) => `/search?s=${encodeURIComponent(q)}`,
   },
   product: {
-    getHref: (sku: string) => `/product/${sku}`,
+    getHref: (id: number) => `/product/${id}`,
   },
 } as const;

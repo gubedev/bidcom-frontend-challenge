@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const FOOTER_COLUMNS = [
   {
     title: "Medios de Envío",
@@ -32,9 +30,9 @@ export default function Footer() {
               <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link}>
-                    <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors">
+                    <span className="text-sm text-gray-400 cursor-default">
                       {link}
-                    </Link>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -45,9 +43,9 @@ export default function Footer() {
         <div className="border-t border-footer-sub mt-10 pt-8">
           <p className="text-sm text-gray-400">
             WhatsApp (sólo texto):{" "}
-            <a href="https://wa.me/5491168652233" className="text-white hover:text-brand transition-colors font-medium">
+            <span className="text-white font-medium cursor-default">
               11 6865 2233
-            </a>
+            </span>
           </p>
         </div>
       </div>
@@ -56,8 +54,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
           <p>© 2025 Bidcom. Todos los derechos reservados.</p>
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-white transition-colors">Términos y condiciones</Link>
-            <Link href="#" className="hover:text-white transition-colors">Política de privacidad</Link>
+            <span className="cursor-default">Términos y condiciones</span>
+            <span className="cursor-default">Política de privacidad</span>
           </div>
         </div>
       </div>

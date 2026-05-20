@@ -16,9 +16,7 @@ describe("paths", () => {
     );
   });
 
-  it("product builds sku path", () => {
-    expect(paths.product.getHref("apple-mbp-14")).toBe(
-      "/product/apple-mbp-14"
-    );
+  it("product builds id path", () => {
+    expect(paths.product.getHref(1)).toBe("/product/1");
   });
 });

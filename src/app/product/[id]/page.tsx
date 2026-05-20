@@ -1,22 +1,22 @@
 import { notFound } from "next/navigation";
-import { getProductBySku } from "@/features/products/server/functions/get-product-by-sku";
+import { getProductById } from "@/features/products/server/functions/get-product-by-id";
 import Container from "@/components/ui/container";
 import ProductDetail from "@/features/products/components/product-detail";
 
 interface ProductPageProps {
-  params: Promise<{ sku: string }>;
+  params: Promise<{ id: string }>;
 }
 
 export async function generateMetadata({ params }: ProductPageProps) {
-  const { sku } = await params;
-  const product = await getProductBySku(sku);
+  const { id } = await params;
+  const product = await getProductById(Number(id));
   if (!product) return { title: "Producto no encontrado — Bidcom" };
   return { title: `${product.title} — Bidcom` };
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const { sku } = await params;
-  const product = await getProductBySku(sku);
+  const { id } = await params;
+  const product = await getProductById(Number(id));
 
   if (!product) notFound();
 
