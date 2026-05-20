@@ -19,10 +19,12 @@ Evaluación técnica frontend para Bidcom. Aplicación e-commerce construida con
 ## Comandos
 
 ```bash
-npm run dev      # servidor de desarrollo → http://localhost:3000
-npm run build    # build de producción
-npm run start    # servidor de producción
-npm run lint     # ESLint
+npm run dev            # servidor de desarrollo → http://localhost:3000
+npm run build          # build de producción
+npm run start          # servidor de producción
+npm run lint           # ESLint
+npm run storybook      # Storybook → http://localhost:6006
+npm run build-storybook  # build estático de Storybook
 ```
 
 ---
@@ -31,25 +33,41 @@ npm run lint     # ESLint
 
 ```
 src/
-├── app/                        # Rutas (Next.js App Router)
-│   ├── page.tsx                # Home /
-│   ├── search/page.tsx         # Listado /search?s=$term
-│   └── product/[sku]/page.tsx  # Detalle /product/$sku
+├── app/                            # Rutas (Next.js App Router)
+│   ├── page.tsx                    # Home /
+│   ├── loading.tsx                 # Skeleton home
+│   ├── search/
+│   │   ├── page.tsx                # Listado /search?s=$term
+│   │   └── loading.tsx             # Skeleton búsqueda
+│   └── product/[sku]/page.tsx      # Detalle /product/$sku
 │
 ├── features/
-│   ├── home/components/        # hero
+│   ├── home/components/
+│   │   └── hero/                   # hero/, hero.tsx, index.ts
 │   └── products/
-│       ├── components/         # product-card, product-grid, empty-state
-│       ├── server/functions/   # get-products, get-categories, get-product-by-sku
-│       └── types/              # Product, Category
+│       ├── components/
+│       │   ├── product-card/       # component + stories + index
+│       │   ├── product-grid/       # component + stories + index
+│       │   ├── product-grid-skeleton/ # component + stories + index
+│       │   └── empty-state/        # component + stories + index
+│       ├── server/functions/       # get-products, get-categories, get-product-by-sku
+│       ├── types/                  # Product, Category
+│       └── mocks.ts                # fixtures para Storybook
 │
 ├── components/
-│   ├── layout/                 # header, footer
-│   └── ui/                     # container
+│   ├── layout/
+│   │   ├── header/                 # component + stories + index
+│   │   └── footer/                 # component + stories + index
+│   └── ui/
+│       └── container/              # component + index
 │
-├── config/paths.ts             # Rutas type-safe
-└── lib/utils.ts                # formatPrice, helpers
+├── config/
+│   ├── paths.ts                    # Rutas type-safe
+│   └── env.ts                      # Variables de entorno
+└── lib/utils.ts                    # formatPrice, helpers
 ```
+
+> Cada componente vive en su propia carpeta con tres archivos: el componente (`*.tsx`), su story (`*.stories.tsx`) y un barrel de exportación (`index.ts`).
 
 ---
 
