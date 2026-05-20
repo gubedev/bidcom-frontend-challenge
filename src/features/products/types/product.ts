@@ -12,11 +12,7 @@ export interface Product {
   images?: string[];
 }
 
-export interface Category {
-  slug: string;
-  name: string;
-  url: string;
-}
+export type Category = string;
 
 export interface ProductsResponse {
   products: Product[];
