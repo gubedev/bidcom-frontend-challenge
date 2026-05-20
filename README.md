@@ -97,7 +97,7 @@ src/
 | RNF-07 | Excluyente | Buenas prácticas de componetización | ✅ |
 | RNF-08 | Deseado | Principios SOLID | ✅ |
 | RNF-09 | Deseado | Clean Architecture | ✅ |
-| RNF-10 | Deseado | Design System | ⬜ |
+| RNF-10 | Deseado | Design System | ✅ |
 | RNF-11 | Deseado | Storybook | ✅ |
 
 ---
