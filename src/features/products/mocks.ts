@@ -1,4 +1,4 @@
-import type { Product, Category } from "@/features/products/types";
+import type { Product } from "@/features/products/types";
 
 export const mockProduct: Product = {
   id: 1,
@@ -50,10 +50,10 @@ export const mockProducts: Product[] = [
   },
 ];
 
-export const mockCategories: Category[] = [
-  { slug: "laptops", name: "Laptops", url: "https://dummyjson.com/products/category/laptops" },
-  { slug: "smartphones", name: "Smartphones", url: "https://dummyjson.com/products/category/smartphones" },
-  { slug: "televisions", name: "Televisores", url: "https://dummyjson.com/products/category/televisions" },
-  { slug: "tablets", name: "Tablets", url: "https://dummyjson.com/products/category/tablets" },
-  { slug: "audio", name: "Audio", url: "https://dummyjson.com/products/category/audio" },
+export const mockCategories: string[] = [
+  "laptops",
+  "smartphones",
+  "televisions",
+  "tablets",
+  "audio",
 ];

@@ -1,7 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import EmptyState from "./empty-state";
-import type { Category } from "@/features/products/types";
 
 vi.mock("next/link", () => ({
   default: ({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
@@ -11,11 +10,7 @@ vi.mock("next/link", () => ({
   ),
 }));
 
-const categories: Category[] = [
-  { slug: "laptops", name: "Laptops", url: "" },
-  { slug: "smartphones", name: "Smartphones", url: "" },
-  { slug: "tablets", name: "Tablets", url: "" },
-];
+const categories = ["laptops", "smartphones", "tablets"];
 
 describe("EmptyState", () => {
   it("renders empty state message", () => {
@@ -27,14 +22,14 @@ describe("EmptyState", () => {
 
   it("renders category suggestion links", () => {
     render(<EmptyState categories={categories} />);
-    expect(screen.getByText("Laptops")).toBeInTheDocument();
-    expect(screen.getByText("Smartphones")).toBeInTheDocument();
-    expect(screen.getByText("Tablets")).toBeInTheDocument();
+    expect(screen.getByText("laptops")).toBeInTheDocument();
+    expect(screen.getByText("smartphones")).toBeInTheDocument();
+    expect(screen.getByText("tablets")).toBeInTheDocument();
   });
 
   it("each category link points to search page", () => {
     render(<EmptyState categories={categories} />);
-    const laptopLink = screen.getByRole("link", { name: "Laptops" });
+    const laptopLink = screen.getByRole("link", { name: "laptops" });
     expect(laptopLink).toHaveAttribute("href", "/search?s=laptops");
   });
 

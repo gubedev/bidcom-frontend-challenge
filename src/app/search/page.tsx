@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { getProducts } from "@/features/products/server/functions/get-products";
+import { getProductsByCategory } from "@/features/products/server/functions/get-products-by-category";
 import { getCategories } from "@/features/products/server/functions/get-categories";
 import ProductGrid from "@/features/products/components/product-grid";
 import ProductGridSkeleton from "@/features/products/components/product-grid-skeleton";
@@ -13,10 +14,12 @@ interface SearchResultsProps {
 async function SearchResults({ searchParams }: SearchResultsProps) {
   const { s = "" } = await searchParams;
 
-  const [{ products }, categories] = await Promise.all([
-    getProducts(s),
-    getCategories(),
-  ]);
+  const categories = await getCategories();
+  const isCategory = s !== "" && categories.includes(s);
+
+  const { products } = isCategory
+    ? await getProductsByCategory(s)
+    : await getProducts(s);
 
   return (
     <>
