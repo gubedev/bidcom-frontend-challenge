@@ -5,7 +5,7 @@ import { paths } from "@/config/paths";
 import { formatPrice } from "@/lib/utils";
 
 interface ProductCardProps {
-  product: Product;
+  product: Pick<Product, "id" | "sku" | "thumbnail" | "title" | "price">;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
