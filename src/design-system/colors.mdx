@@ -1,0 +1,100 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design System/Colors" />
+
+# Colors
+
+Paleta de colores del Design System. Los tokens están definidos como CSS custom properties en `globals.css` y mapeados a Tailwind v4 vía `@theme inline`.
+
+---
+
+## Brand
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#0000FF', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>brand</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#0000FF</div>
+    <div style={{ fontSize: 11, color: '#999' }}>text-brand / bg-brand</div>
+  </div>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#0000cc', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>brand-dark</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#0000cc</div>
+    <div style={{ fontSize: 11, color: '#999' }}>text-brand-dark / bg-brand-dark</div>
+  </div>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#1a1a1a', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>body-text</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#1a1a1a</div>
+    <div style={{ fontSize: 11, color: '#999' }}>text-body-text</div>
+  </div>
+</div>
+
+## Surfaces
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#ffffff', border: '1px solid #e5e7eb', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>background</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#ffffff</div>
+    <div style={{ fontSize: 11, color: '#999' }}>bg-background</div>
+  </div>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#f5f5f5', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>secondary-bg</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#f5f5f5</div>
+    <div style={{ fontSize: 11, color: '#999' }}>bg-secondary-bg</div>
+  </div>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#f0f0f0', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>nav-bg</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#f0f0f0</div>
+    <div style={{ fontSize: 11, color: '#999' }}>bg-nav-bg</div>
+  </div>
+</div>
+
+## Footer
+
+<div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#1E1E1E', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>top-bar</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#1E1E1E</div>
+    <div style={{ fontSize: 11, color: '#999' }}>bg-top-bar</div>
+  </div>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#2b2b2b', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>footer-bg</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#2b2b2b</div>
+    <div style={{ fontSize: 11, color: '#999' }}>bg-footer-bg</div>
+  </div>
+  <div>
+    <div style={{ width: 80, height: 80, borderRadius: 8, background: '#3d3d3d', marginBottom: 8 }} />
+    <div style={{ fontSize: 12, fontWeight: 600 }}>footer-sub</div>
+    <div style={{ fontSize: 12, color: '#666' }}>#3d3d3d</div>
+    <div style={{ fontSize: 11, color: '#999' }}>bg-footer-sub</div>
+  </div>
+</div>
+
+## Grays (Tailwind)
+
+<div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+  {[
+    { name: 'gray-50',  hex: '#f9fafb' },
+    { name: 'gray-100', hex: '#f3f4f6' },
+    { name: 'gray-200', hex: '#e5e7eb' },
+    { name: 'gray-300', hex: '#d1d5db' },
+    { name: 'gray-400', hex: '#9ca3af' },
+    { name: 'gray-500', hex: '#6b7280' },
+    { name: 'gray-600', hex: '#4b5563' },
+    { name: 'gray-700', hex: '#374151' },
+    { name: 'gray-800', hex: '#1f2937' },
+  ].map(({ name, hex }) => (
+    <div key={name}>
+      <div style={{ width: 64, height: 64, borderRadius: 6, background: hex, border: '1px solid #e5e7eb', marginBottom: 6 }} />
+      <div style={{ fontSize: 11, fontWeight: 600 }}>{name}</div>
+      <div style={{ fontSize: 11, color: '#999' }}>{hex}</div>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,82 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design System/Typography" />
+
+# Typography
+
+Fuente base: **Geist Sans** (Next.js default). Fallback: `Arial, Helvetica, sans-serif`.
+
+---
+
+## Escala de tamaños
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 80, fontSize: 11, color: '#999', flexShrink: 0 }}>text-xs · 12px</div>
+    <div style={{ fontSize: 12 }}>El precio incluye IVA y envío gratis</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 80, fontSize: 11, color: '#999', flexShrink: 0 }}>text-sm · 14px</div>
+    <div style={{ fontSize: 14 }}>Apple MacBook Pro 14 M3 — Categoría: Laptops</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 80, fontSize: 11, color: '#999', flexShrink: 0 }}>text-base · 16px</div>
+    <div style={{ fontSize: 16 }}>The MacBook Pro 14 delivers exceptional performance.</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 80, fontSize: 11, color: '#999', flexShrink: 0 }}>text-lg · 18px</div>
+    <div style={{ fontSize: 18 }}>$1.299</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 80, fontSize: 11, color: '#999', flexShrink: 0 }}>text-2xl · 24px</div>
+    <div style={{ fontSize: 24, fontWeight: 700 }}>Apple MacBook Pro 14 M3</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 80, fontSize: 11, color: '#999', flexShrink: 0 }}>text-3xl · 30px</div>
+    <div style={{ fontSize: 30, fontWeight: 700, color: '#0000FF' }}>$1.299</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 80, fontSize: 11, color: '#999', flexShrink: 0 }}>text-4xl · 36px</div>
+    <div style={{ fontSize: 36, fontWeight: 700 }}>Bienvenido a Bidcom</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 80, fontSize: 11, color: '#999', flexShrink: 0 }}>text-5xl · 48px</div>
+    <div style={{ fontSize: 48, fontWeight: 700 }}>Bidcom</div>
+  </div>
+</div>
+
+---
+
+## Pesos
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 120, fontSize: 11, color: '#999', flexShrink: 0 }}>normal · 400</div>
+    <div style={{ fontSize: 16, fontWeight: 400 }}>Producto agregado al carrito</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 120, fontSize: 11, color: '#999', flexShrink: 0 }}>medium · 500</div>
+    <div style={{ fontSize: 16, fontWeight: 500 }}>Producto agregado al carrito</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 120, fontSize: 11, color: '#999', flexShrink: 0 }}>semibold · 600</div>
+    <div style={{ fontSize: 16, fontWeight: 600 }}>Producto agregado al carrito</div>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem' }}>
+    <div style={{ width: 120, fontSize: 11, color: '#999', flexShrink: 0 }}>bold · 700</div>
+    <div style={{ fontSize: 16, fontWeight: 700 }}>Producto agregado al carrito</div>
+  </div>
+</div>
+
+---
+
+## Usos frecuentes
+
+| Elemento | Clases |
+|---|---|
+| Marca / categoría | `text-sm uppercase tracking-widest font-medium text-gray-500` |
+| Título de producto | `text-2xl sm:text-3xl font-bold text-body-text leading-tight` |
+| Precio | `text-3xl font-bold text-brand` |
+| Descripción | `text-sm sm:text-base text-gray-600 leading-relaxed` |
+| Label de tabla | `text-sm text-gray-500` |
+| Footer heading | `text-sm font-semibold uppercase tracking-wide text-white` |
