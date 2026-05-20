@@ -23,6 +23,8 @@ npm run dev            # servidor de desarrollo → http://localhost:3000
 npm run build          # build de producción
 npm run start          # servidor de producción
 npm run lint           # ESLint
+npm run test           # unit tests (Vitest)
+npm run test:watch     # unit tests en modo watch
 npm run storybook      # Storybook → http://localhost:6006
 npm run build-storybook  # build estático de Storybook
 ```
@@ -39,20 +41,19 @@ src/
 │   ├── search/
 │   │   ├── page.tsx                # Listado /search?s=$term
 │   │   └── loading.tsx             # Skeleton búsqueda
-│   └── product/[sku]/page.tsx      # Detalle /product/$sku
+│   └── product/[id]/page.tsx       # Detalle /product/$id
 │
 ├── features/
-│   ├── home/components/
-│   │   └── hero/                   # hero/, hero.tsx, index.ts
 │   └── products/
 │       ├── components/
 │       │   ├── product-card/       # component + stories + index
+│       │   ├── product-detail/     # component + tests + index
 │       │   ├── product-grid/       # component + stories + index
 │       │   ├── product-grid-skeleton/ # component + stories + index
 │       │   └── empty-state/        # component + stories + index
-│       ├── server/functions/       # get-products, get-categories, get-product-by-sku
+│       ├── server/functions/       # get-products, get-categories, get-product-by-id
 │       ├── types/                  # Product, Category
-│       └── mocks.ts                # fixtures para Storybook
+│       └── mocks.ts                # fixtures para Storybook y tests
 │
 ├── components/
 │   ├── layout/
@@ -78,17 +79,17 @@ src/
 | RF-01 | Home `/` — layout con Header, Hero y Footer | ✅ |
 | RF-02 | Header — logo con link a `/`, barra de búsqueda que redirige a `/search?s=$term` | ✅ |
 | RF-03 | Card de producto — imagen, nombre y precio | ✅ |
-| RF-04 | Página `/search?s=$term` — grid responsive de hasta 20 productos desde DummyJSON | ⬜ |
-| RF-05 | `/search` — click en card navega a `/product/$sku` | ⬜ |
-| RF-06 | `/search` — estado vacío con mensaje y 5 categorías sugeridas | ⬜ |
-| RF-07 | Página `/product/$sku` — detalle del producto | ⬜ |
+| RF-04 | Página `/search?s=$term` — grid responsive de hasta 20 productos desde DummyJSON | ✅ |
+| RF-05 | `/search` — click en card navega a `/product/$id` | ✅ |
+| RF-06 | `/search` — estado vacío con mensaje y 5 categorías sugeridas | ✅ |
+| RF-07 | Página `/product/$id` — detalle del producto | ✅ |
 
 ## Requerimientos no funcionales
 
 | ID | Tipo | Descripción | Estado |
 |---|---|---|---|
 | RNF-01 | Excluyente | TypeScript en todo el proyecto | ✅ |
-| RNF-02 | Excluyente | Tests de integración y/o unitarios | ⬜ |
+| RNF-02 | Excluyente | Tests de integración y/o unitarios | ✅ |
 | RNF-03 | Excluyente | Next.js última versión (v16) | ✅ |
 | RNF-04 | Excluyente | Tailwind CSS última versión (v4) | ✅ |
 | RNF-05 | Excluyente | Diseño responsive / mobile first | ✅ |
@@ -97,7 +98,7 @@ src/
 | RNF-08 | Deseado | Principios SOLID | ✅ |
 | RNF-09 | Deseado | Clean Architecture | ✅ |
 | RNF-10 | Deseado | Design System | ⬜ |
-| RNF-11 | Deseado | Storybook | ⬜ |
+| RNF-11 | Deseado | Storybook | ✅ |
 
 ---
 
@@ -107,7 +108,7 @@ src/
 |---|---|
 | `GET /products/search?q={term}&limit=20` | Búsqueda de productos |
 | `GET /products/categories` | Listado de categorías |
-| `GET /products/search?q={sku}` | Obtener producto por SKU |
+| `GET /products/{id}` | Obtener producto por ID |
 
 Base URL: `https://dummyjson.com`
 

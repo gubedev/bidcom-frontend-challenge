@@ -5,13 +5,13 @@ import { paths } from "@/config/paths";
 import { formatPrice } from "@/lib/utils";
 
 interface ProductCardProps {
-  product: Pick<Product, "id" | "sku" | "thumbnail" | "title" | "price">;
+  product: Pick<Product, "id" | "thumbnail" | "title" | "price">;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
-      href={paths.product.getHref(product.sku)}
+      href={paths.product.getHref(product.id)}
       className="group flex flex-col bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
     >
       <div className="relative aspect-square bg-gray-50">

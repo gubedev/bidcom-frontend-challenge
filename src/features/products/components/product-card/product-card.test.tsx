@@ -19,7 +19,6 @@ vi.mock("next/link", () => ({
 
 const product = {
   id: 1,
-  sku: "apple-mbp-14",
   thumbnail: "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
   title: "Apple MacBook Pro 14 M3",
   price: 1299,
@@ -39,7 +38,7 @@ describe("ProductCard", () => {
   it("links to product detail page", () => {
     render(<ProductCard product={product} />);
     const link = screen.getByRole("link");
-    expect(link).toHaveAttribute("href", "/product/apple-mbp-14");
+    expect(link).toHaveAttribute("href", "/product/1");
   });
 
   it("renders product thumbnail image", () => {

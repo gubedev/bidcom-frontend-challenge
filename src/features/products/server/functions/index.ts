@@ -1,3 +1,3 @@
 export { getProducts, PRODUCTS_LIMIT } from "./get-products";
-export { getProductBySku } from "./get-product-by-sku";
+export { getProductById } from "./get-product-by-id";
 export { getCategories } from "./get-categories";
